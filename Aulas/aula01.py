@@ -1,6 +1,5 @@
 import pyautogui as py
 import keyboard as kb
-import tkinter as tk
 from tkinter import messagebox
 
 def open1():
@@ -11,7 +10,11 @@ def open1():
     py.press('enter')
     py.sleep(1)
     kb.press_and_release('ctrl+a')
-    py.sleep(0.5)
-    messagebox.showinfo("Deseja deletar todos os arquivos?")
+    py.sleep(0.5)   
+    while True:
+        if kb.is_pressed('o'):
+            break
+        else:
+            messagebox.showinfo("Deseja deletar todos os arquivos?")
 
 open1()

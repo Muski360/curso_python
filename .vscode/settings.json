@@ -1,0 +1,8 @@
+{
+    "python.defaultInterpreterPath": "C:\\Users\\FIC\\Documents\\Curso-Python\\venv\\Scripts\\python.exe",
+    "python.analysis.extraPaths": [
+        "C:\\Users\\FIC\\Documents\\Curso-Python\\venv\\Lib\\site-packages"
+    ],
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic"
+}
