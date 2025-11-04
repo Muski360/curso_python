@@ -12,7 +12,7 @@ def open1():
     kb.press_and_release('ctrl+a')
     py.sleep(0.5)   
     while True:
-        if kb.is_pressed('o'):
+        if kb.is_pressed('enter'):
             break
         else:
             messagebox.showinfo("Deseja deletar todos os arquivos?")
