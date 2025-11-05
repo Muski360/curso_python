@@ -7,8 +7,4 @@ __pycache__/
 *.log
 
 venv/
-.env/
-
-scripts/
-
-tests/
+.env/   
