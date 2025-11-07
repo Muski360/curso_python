@@ -7,6 +7,4 @@ __pycache__/
 *.log
 
 venv/
-.env/   
-
-tests/
+.env/
