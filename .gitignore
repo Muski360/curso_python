@@ -1,10 +1,2 @@
-__pycache__/
-*.pyc
-*.pyo
-
-*tmp*
-*temp*
-*.log
-
 venv/
 .env/

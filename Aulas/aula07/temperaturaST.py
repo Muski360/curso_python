@@ -1,40 +1,44 @@
-import streamlit as st 
+import streamlit as st
 
-def Celsius_Fahrenheit(t):
-    return (t * 1.8) + 32
-def Celsius_Kelvin(t):
-    return (t + 273.15)
-def Kelvin_Fahrenheit(t):
-    return Celsius_Fahrenheit(Kelvin_Celsius(t))
-def Fahrenheit_Celsius(t):
-    return (t - 32) * 1.8
-def Fahrenheit_Kelvin(t):
-    return ((t - 32) * 5/9) + 273.15
-def Kelvin_Celsius(t):
-    return t - 273.15
+# Funções de conversão
+def Celsius_Fahrenheit(c):
+    return (c * 9/5) + 32
 
-#Problema temperatura
-st.sidebar.title("Conversor de Temperatura")
-st.title("🌡️Conversor de Temperatura")
-st.sidebar.markdown("Converte temperaturas entre Celsius, Fahrenheit e Kelvin.")
+def Celsius_Kelvin(c):
+    return c + 273.15
 
-# celsius_selecionado = st.sidebar.checkbox("Celsius", key="Temp_Celsius")
-# fahrenheit_selecionado = st.sidebar.checkbox("Fahrenheit", key="Temp_Fahrenheit")
-# kelvin_selecionado = st.sidebar.checkbox("Kelvin", key="Temp_Kelvin")
+def Fahrenheit_Celsius(f):
+    return (f - 32) * 5/9
 
-opcao_selecionada = st.sidebar.radio(options=["Celsius"], ["Fahrenheit"], ["Kelvin"])
-#Entrada de dados
-temp = st.number_input("Valor de temperatura",format="%.2f", step=1.0)
+def Fahrenheit_Kelvin(f):
+    return (f - 32) * 5/9 + 273.15
+
+def Kelvin_Celsius(k):
+    return k - 273.15
+
+def Kelvin_Fahrenheit(k):
+    return (k - 273.15) * 9/5 + 32
 
 
-#Processamento de dados
-if st.button("Converter", icon='🌡'):
-    if celsius_selecionado:
-        st.write(f"{temp}°C em Fahrenheit: {Celsius_Fahrenheit(temp):.2f}°F")
-        st.write(f"{temp}°C em Kelvin: {Celsius_Kelvin(temp):.2f}°F")
-    elif fahrenheit_selecionado:
+# Sidebar
+opcao_selecionada = st.sidebar.radio(
+    "Selecione a escala de entrada:",
+    ["Celsius", "Fahrenheit", "Kelvin"]
+)
+
+# Entrada de dados
+temp = st.number_input("Valor de temperatura:", format="%.2f", step=1.0)
+
+# Processamento
+if st.button("Converter 🌡"):
+    if opcao_selecionada == "Celsius":
+        st.write(f"{temp}°C em Fahrenheit: {Celsius_Fahrenheit(temp):.2f} °F")
+        st.write(f"{temp}°C em Kelvin: {Celsius_Kelvin(temp):.2f} K")
+
+    elif opcao_selecionada == "Fahrenheit":
         st.write(f"{temp}°F em Celsius: {Fahrenheit_Celsius(temp):.2f} °C")
-        st.write(f"{temp}°F em Kelvin: {Fahrenheit_Kelvin(temp):.2f} °K")
-    else:
-        st.write(f"{temp}K em Celsius: {Kelvin_Celsius(temp):.2f} °C")
-        st.write(f"{temp}K em Fahrenheit: {Kelvin_Fahrenheit(temp):.2f} °F") 
+        st.write(f"{temp}°F em Kelvin: {Fahrenheit_Kelvin(temp):.2f} K")
+
+    elif opcao_selecionada == "Kelvin":
+        st.write(f"{temp} K em Celsius: {Kelvin_Celsius(temp):.2f} °C")
+        st.write(f"{temp} K em Fahrenheit: {Kelvin_Fahrenheit(temp):.2f} °F")
