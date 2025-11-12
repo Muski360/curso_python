@@ -3,6 +3,6 @@
     "python.analysis.extraPaths": [
         "C:\\Users\\FIC\\Documents\\Curso-Python\\venv\\Lib\\site-packages"
     ],
-    "python.languageServer": "Pylance",
+    "python.languageServer": "None",
     "python.analysis.typeCheckingMode": "basic"
 }
