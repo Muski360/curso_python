@@ -1,0 +1,8 @@
+{% extends "base/basePagina.html" %}
+{% block conteudo %}
+<main class="principal-conteudo-container">
+    {% for receita in receitas %}
+        {% include "parciais/card.html" %}
+    {% endfor %}
+</main>
+{% endblock conteudo %}

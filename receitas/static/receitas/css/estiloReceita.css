@@ -1,0 +1,26 @@
+.principal-conteudo-card-receita {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.receitas-autor-card-receita{
+    font-size: 18px;
+    color: #555;
+    margin: 20px;
+    vertical-align: middle;
+}
+
+.descrição-card-receita {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: justify;
+    background-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+}
